@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+:root {
+    --Cyan: hsl(179, 62%, 43%);
+    --Yellow: hsl(71, 73%, 54%);
+    --Gray: hsl(204, 43%, 93%);
+    --GrayBlue: hsl(218, 22%, 67%);
+    --LtCyan: hsl(179, 47%, 52%);
+}
+
+body{ 
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    background: var(--Gray);
+}
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.community {
+    grid-column: 1 / 3;
+    background: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: var(--GrayBlue);
+    padding: 30px;
+}
+.community h1 {
+    color: var(--Cyan);
+}
+.community h2 {
+    color: var(--Yellow);
+}
+.subscription {
+    background: var(--Cyan);
+    color: white;
+    border-bottom-left-radius: 5px;
+    padding: 30px;
+    line-height: 1px;
+}
+.subscription h1 {
+    display: inline-block;
+}
+.subscription span {
+    color: var(--Gray);
+}
+.button {
+    background: var(--Yellow);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Karla', sans-serif;
+    color: white;
+    width: 90%;
+    cursor: pointer;
+    margin-top: 40px;
+}
+.why {
+    background: var(--LtCyan);
+    color: white;
+    border-bottom-right-radius: 5px;
+    padding: 30px;
+}
+.why ul {
+    list-style: none;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 375px) {
+    .grid-container {
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .community, .subscription, .why {
+        grid-column: 1 / 3;
+    }
+    .center {
+        position: unset;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    .subscription {
+        border-bottom-left-radius: 0px;
+    }
+    .why {
+        border-bottom-left-radius: 5px;
+    }
+}
